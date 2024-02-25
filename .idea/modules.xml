@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Ex20240225Hangman_v1/Ex20240225Hangman_v1.iml" filepath="$PROJECT_DIR$/Ex20240225Hangman_v1/Ex20240225Hangman_v1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exercise20240211_01/Exercise20240211_01.iml" filepath="$PROJECT_DIR$/Exercise20240211_01/Exercise20240211_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exercise20240211_02/Exercise20240211_02.iml" filepath="$PROJECT_DIR$/Exercise20240211_02/Exercise20240211_02.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exercise20240219Bank/Exercise20240219Bank.iml" filepath="$PROJECT_DIR$/Exercise20240219Bank/Exercise20240219Bank.iml" />
