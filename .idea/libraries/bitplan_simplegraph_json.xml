@@ -1,0 +1,38 @@
+<component name="libraryTable">
+  <library name="bitplan.simplegraph.json" type="repository">
+    <properties maven-id="com.bitplan.simplegraph:com.bitplan.simplegraph.json:0.0.5" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/bitplan/simplegraph/com.bitplan.simplegraph.json/0.0.5/com.bitplan.simplegraph.json-0.0.5.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/bitplan/simplegraph/com.bitplan.simplegraph-core/0.0.5/com.bitplan.simplegraph-core-0.0.5.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/tinkerpop/gremlin-core/3.4.0/gremlin-core-3.4.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/tinkerpop/gremlin-shaded/3.4.0/gremlin-shaded-3.4.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-configuration/commons-configuration/1.10/commons-configuration-1.10.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.6/commons-lang-2.6.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/yaml/snakeyaml/1.15/snakeyaml-1.15.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/javatuples/javatuples/1.2/javatuples-1.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/carrotsearch/hppc/0.7.1/hppc-0.7.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/jcabi/jcabi-manifests/1.1/jcabi-manifests-1.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/jcabi/jcabi-log/0.14/jcabi-log-0.14.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/squareup/javapoet/1.8.0/javapoet-1.8.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/net/objecthunter/exp4j/0.4.8/exp4j-0.4.8.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/jcl-over-slf4j/1.7.21/jcl-over-slf4j-1.7.21.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/tinkerpop/tinkergraph-gremlin/3.4.0/tinkergraph-gremlin-3.4.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.3.1/commons-lang3-3.3.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/rythmengine/rythm-engine/1.3.0/rythm-engine-1.3.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/eclipse/jdt/core/compiler/ecj/4.6.1/ecj-4.6.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/stevesoft/pat/pat/1.5.3/pat-1.5.3.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.4/commons-io-2.4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.11/fastjson-1.2.11.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/mvel/mvel2/2.2.8.Final/mvel2-2.2.8.Final.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.2/gson-2.8.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/sun/jersey/jersey-client/1.19.4/jersey-client-1.19.4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/sun/jersey/jersey-core/1.19.4/jersey-core-1.19.4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/joda-time/joda-time/2.9.9/joda-time-2.9.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
