@@ -57,7 +57,7 @@ python metro_map_v2.0_minheap.py
 ## Files Included
 
 ```
-metro_map_v2.0_minheap.py                    # Main Python program
+metro_map_v2.0_minheap.py            # Main Python program
 stations.csv                         # Station data source (real MRT station list)
 SingaporeMetro_README.md             # Program usage documentation
 SingaporeMetro_requirements.txt      # Package requirements (pandas)
