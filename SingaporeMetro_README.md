@@ -29,7 +29,7 @@ pip install pandas
 4. **Run the program from your terminal or command prompt:**
 
 ```bash
-python metro_map_v1.9.py
+python metro_map_v2.0_minheap.py
 ```
 
 5. **Follow the prompts**:
