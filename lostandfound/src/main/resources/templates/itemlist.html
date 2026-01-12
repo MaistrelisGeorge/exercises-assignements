@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Items - Lost and Found</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Lost and Found Items</h1>
+
+        <div class="nav">
+            <a href="/dashboard">Dashboard</a> |
+            <a href="/items/create">Report New Item</a> |
+            <a href="/logout">Logout</a>
+        </div>
+
+        <h3>Search / Filter Items</h3>
+        <form action="/items/search" method="get">
+            <div class="search-form">
+                <div class="form-group">
+                    <label>Category:</label>
+                    <select name="category">
+                        <option value="">All Categories</option>
+                        <option th:each="cat : ${categories}" th:value="${cat}" th:text="${cat}"></option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Status:</label>
+                    <select name="status">
+                        <option value="">All Status</option>
+                        <option th:each="stat : ${statuses}" th:value="${stat}" th:text="${stat}"></option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Location:</label>
+                    <input type="text" name="location" placeholder="Search by location"/>
+                </div>
+
+                <div class="form-group">
+                    <label>Start Date:</label>
+                    <input type="date" name="startdate"/>
+                </div>
+
+                <div class="form-group">
+                    <label>End Date:</label>
+                    <input type="date" name="enddate"/>
+                </div>
+
+                <button type="submit">Search</button>
+                <a href="/items/all">Clear Filters</a>
+                <a th:href="@{/reports/search(category=${param.category},status=${param.status},location=${param.location},startdate=${param.startdate},enddate=${param.enddate})}">Export to PDF</a>
+            </div>
+        </form>
+
+        <h3>Items Found: <span th:text="${#lists.size(items)}"></span></h3>
+        <table>
+            <tr>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Reporter</th>
+                <th>Actions</th>
+            </tr>
+            <tr th:each="item : ${items}">
+                <td><a th:href="@{/items/view/{id}(id=${item.id})}" th:text="${item.itemname}"></a></td>
+                <td th:text="${item.category}"></td>
+                <td th:text="${item.status}"></td>
+                <td th:text="${item.location}"></td>
+                <td th:text="${#temporals.format(item.datelostfound, 'dd-MM-yyyy')}"></td>
+                <td th:text="${item.reporter.username}"></td>
+                <td>
+                    <a th:href="@{/items/view/{id}(id=${item.id})}">View</a> |
+                    <a th:href="@{/reports/item/{id}(id=${item.id})}">PDF</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

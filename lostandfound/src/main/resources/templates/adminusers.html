@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Users - Admin</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Manage Users</h1>
+
+        <div class="nav">
+            <a href="/admin/dashboard">Admin Dashboard</a> |
+            <a href="/admin/items">Manage Items</a> |
+            <a href="/dashboard">My Dashboard</a> |
+            <a href="/logout">Logout</a>
+        </div>
+
+        <h3>All Registered Users</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Full Name</th>
+                <th>Role</th>
+                <th>Registration Date</th>
+                <th>Items Reported</th>
+            </tr>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}"></td>
+                <td th:text="${user.username}"></td>
+                <td th:text="${user.email}"></td>
+                <td th:text="${user.fullname}"></td>
+                <td th:text="${user.role}"></td>
+                <td th:text="${#temporals.format(user.registrationdate, 'dd-MM-yyyy HH:mm')}"></td>
+                <td th:text="${#lists.size(user.items)}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

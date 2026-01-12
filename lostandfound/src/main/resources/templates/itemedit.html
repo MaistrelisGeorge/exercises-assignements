@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Item - Lost and Found</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Item</h1>
+
+        <div class="nav">
+            <a href="/dashboard">Dashboard</a> |
+            <a href="/items/all">Browse Items</a> |
+            <a href="/logout">Logout</a>
+        </div>
+
+        <form th:action="@{/items/edit/{id}(id=${item.id})}" method="post" th:object="${item}">
+            <div class="form-group">
+                <label>Item Name:</label>
+                <input type="text" th:field="*{itemname}" required/>
+                <span th:if="${#fields.hasErrors('itemname')}" th:errors="*{itemname}" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Category:</label>
+                <select th:field="*{category}" required>
+                    <option th:each="cat : ${categories}" th:value="${cat}" th:text="${cat}"></option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Status:</label>
+                <select th:field="*{status}" required>
+                    <option th:each="stat : ${statuses}" th:value="${stat}" th:text="${stat}"></option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Description:</label>
+                <textarea th:field="*{description}" required rows="5"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Location:</label>
+                <input type="text" th:field="*{location}" required/>
+            </div>
+
+            <div class="form-group">
+                <label>Date Lost/Found:</label>
+                <input type="date" th:field="*{datelostfound}" required/>
+            </div>
+
+            <div class="form-group">
+                <label>Contact Info:</label>
+                <input type="text" th:field="*{contactinfo}"/>
+            </div>
+
+            <button type="submit">Update Item</button>
+            <a th:href="@{/items/view/{id}(id=${item.id})}">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

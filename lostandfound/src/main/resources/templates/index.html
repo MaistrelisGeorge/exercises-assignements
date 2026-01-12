@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lost and Found - Home</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Lost and Found System</h1>
+        <h2>Municipality Item Recovery Service</h2>
+
+        <div class="nav">
+            <a href="/login">Login</a> |
+            <a href="/register">Register</a> |
+            <a href="/items/search">Search Items</a>
+        </div>
+
+        <h3>Recent Items</h3>
+        <div class="items">
+            <table>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                </tr>
+                <tr th:each="item : ${recentitems}">
+                    <td><a th:href="@{/items/view/{id}(id=${item.id})}" th:text="${item.itemname}"></a></td>
+                    <td th:text="${item.category}"></td>
+                    <td th:text="${item.status}"></td>
+                    <td th:text="${item.location}"></td>
+                    <td th:text="${#temporals.format(item.datereported, 'dd-MM-yyyy HH:mm')}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

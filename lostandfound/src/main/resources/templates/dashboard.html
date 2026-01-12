@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Lost and Found</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Dashboard</h1>
+        <p>Welcome, <span th:text="${session.loggedinuser.username}"></span>!</p>
+
+        <div class="nav">
+            <a href="/items/all">Browse All Items</a> |
+            <a href="/items/create">Report New Item</a> |
+            <a th:if="${session.loggedinuser.role.name() == 'ADMIN'}" href="/admin/dashboard">Admin Panel</a>
+            <span th:if="${session.loggedinuser.role.name() == 'ADMIN'}">|</span>
+            <a href="/logout">Logout</a>
+        </div>
+
+        <div th:if="${message}" class="success" th:text="${message}"></div>
+
+        <h3>My Reported Items</h3>
+        <table>
+            <tr>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Location</th>
+                <th>Date Reported</th>
+                <th>Actions</th>
+            </tr>
+            <tr th:each="item : ${items}">
+                <td><a th:href="@{/items/view/{id}(id=${item.id})}" th:text="${item.itemname}"></a></td>
+                <td th:text="${item.category}"></td>
+                <td th:text="${item.status}"></td>
+                <td th:text="${item.location}"></td>
+                <td th:text="${#temporals.format(item.datereported, 'dd-MM-yyyy HH:mm')}"></td>
+                <td>
+                    <a th:href="@{/items/edit/{id}(id=${item.id})}">Edit</a> |
+                    <a th:href="@{/items/delete/{id}(id=${item.id})}" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

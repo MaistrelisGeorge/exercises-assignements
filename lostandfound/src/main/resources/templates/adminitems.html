@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Items - Admin</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Manage All Items</h1>
+
+        <div class="nav">
+            <a href="/admin/dashboard">Admin Dashboard</a> |
+            <a href="/admin/users">Manage Users</a> |
+            <a href="/dashboard">My Dashboard</a> |
+            <a href="/logout">Logout</a>
+        </div>
+
+        <div th:if="${message}" class="success" th:text="${message}"></div>
+
+        <h3>All Items</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Location</th>
+                <th>Reporter</th>
+                <th>Date Reported</th>
+                <th>Actions</th>
+            </tr>
+            <tr th:each="item : ${items}">
+                <td th:text="${item.id}"></td>
+                <td><a th:href="@{/items/view/{id}(id=${item.id})}" th:text="${item.itemname}"></a></td>
+                <td th:text="${item.category}"></td>
+                <td th:text="${item.status}"></td>
+                <td th:text="${item.location}"></td>
+                <td th:text="${item.reporter.username}"></td>
+                <td th:text="${#temporals.format(item.datereported, 'dd-MM-yyyy HH:mm')}"></td>
+                <td>
+                    <a th:href="@{/items/view/{id}(id=${item.id})}">View</a> |
+                    <a th:href="@{/admin/items/delete/{id}(id=${item.id})}" onclick="return confirm('Delete this item?')">Delete</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

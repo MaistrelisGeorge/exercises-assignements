@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard - Lost and Found</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+
+        <div class="nav">
+            <a href="/dashboard">My Dashboard</a> |
+            <a href="/admin/users">Manage Users</a> |
+            <a href="/admin/items">Manage Items</a> |
+            <a href="/items/all">Browse Items</a> |
+            <a href="/logout">Logout</a>
+        </div>
+
+        <h2>System Statistics</h2>
+        <div class="stats">
+            <div class="stat-box">
+                <h3>Total Users</h3>
+                <p class="stat-number" th:text="${totalusers}"></p>
+            </div>
+            <div class="stat-box">
+                <h3>Total Items</h3>
+                <p class="stat-number" th:text="${totalitems}"></p>
+            </div>
+        </div>
+
+        <h3>Items by Status</h3>
+        <table>
+            <tr>
+                <th>Status</th>
+                <th>Count</th>
+            </tr>
+            <tr th:each="entry : ${itemcountbystatus}">
+                <td th:text="${entry.key}"></td>
+                <td th:text="${entry.value}"></td>
+            </tr>
+        </table>
+
+        <h3>Items by Category</h3>
+        <table>
+            <tr>
+                <th>Category</th>
+                <th>Count</th>
+            </tr>
+            <tr th:each="entry : ${itemcountbycategory}">
+                <td th:text="${entry.key}"></td>
+                <td th:text="${entry.value}"></td>
+            </tr>
+        </table>
+
+        <h3>Most Active Users</h3>
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Full Name</th>
+                <th>Items Reported</th>
+            </tr>
+            <tr th:each="user : ${mostactiveusers}">
+                <td th:text="${user.username}"></td>
+                <td th:text="${user.fullname}"></td>
+                <td th:text="${user.itemCount}"></td>
+            </tr>
+        </table>
+
+        <h3>Items by Location</h3>
+        <table>
+            <tr>
+                <th>Location</th>
+                <th>Count</th>
+            </tr>
+            <tr th:each="entry : ${itemcountbylocation}">
+                <td th:text="${entry.key}"></td>
+                <td th:text="${entry.value}"></td>
+            </tr>
+        </table>
+
+        <h3>Recent Activity (Last 10 Items)</h3>
+        <table>
+            <tr>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Reporter</th>
+                <th>Date Reported</th>
+            </tr>
+            <tr th:each="item : ${recentitems}">
+                <td><a th:href="@{/items/view/{id}(id=${item.id})}" th:text="${item.itemname}"></a></td>
+                <td th:text="${item.category}"></td>
+                <td th:text="${item.status}"></td>
+                <td th:text="${item.reporter.username}"></td>
+                <td th:text="${#temporals.format(item.datereported, 'dd-MM-yyyy HH:mm')}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
